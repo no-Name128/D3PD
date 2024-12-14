@@ -1,0 +1,18 @@
+{
+    "sourceFile": "docs/getting_started.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1734153534983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1734153534983,
+            "name": "Commit-0",
+            "content": "# Getting started with D3PD\n## Training\n\nTo train D3PD with 8 GPUs, run:\n```bash\nbash tools/dist_train.sh $CONFIG 8\n```\n\n## Evaluation\n\nTo evaluate D3PD with 8 GPU, run:\n```bash\nbash tools/dist_test.sh $YOUR_CONFIG $YOUR_CKPT 8 --eval=mAP\n```\n\n"
+        }
+    ]
+}

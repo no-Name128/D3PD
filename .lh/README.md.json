@@ -3,11 +3,27 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1734153162166,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1734153503730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+# D3PD\r\n+\r\n+The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n+\r\n+## Installation\r\n+Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n+\r\n+## Getting Started\r\n+Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.\r\n+\r\n+\r\n+## Acknowledgement\r\n+This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n"
+                },
+                {
+                    "date": 1734153515288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+# D3PD\r\n+\r\n+The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n+\r\n+\r\n+## Installation\r\n+Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n+\r\n+## Getting Started\r\n+Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.\r\n+\r\n+\r\n+## Acknowledgement\r\n+This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n"
+                },
+                {
+                    "date": 1734153528747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,30 +11,4 @@\n \r\n \r\n ## Acknowledgement\r\n This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n-# D3PD\r\n-\r\n-The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n-\r\n-## Installation\r\n-Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n-\r\n-## Getting Started\r\n-Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.\r\n-\r\n-\r\n-## Acknowledgement\r\n-This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n-# D3PD\r\n-\r\n-The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n-\r\n-## Installation\r\n-Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n-\r\n-## Getting Started\r\n-Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.\r\n-\r\n-\r\n-## Acknowledgement\r\n-This project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n"
+                },
+                {
+                    "date": 1734153577604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n # D3PD\r\n \r\n The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n+![D3PD](/docs/overrall.png \"D3PD\")\r\n \r\n-\r\n ## Installation\r\n Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n \r\n ## Getting Started\r\n"
                 }
             ],
             "date": 1734153162166,
