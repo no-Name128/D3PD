@@ -6,7 +6,7 @@ The official implementation of the paper [D3PD: Dual Distillation and Dynamic Fu
 Please check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.
 
 ## Getting Started
-Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of BEVerse.
+Please check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.
 
 
 ## Acknowledgement

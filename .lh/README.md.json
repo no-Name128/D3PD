@@ -1,0 +1,18 @@
+{
+    "sourceFile": "README.md",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1734153162166,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1734153162166,
+            "name": "Commit-0",
+            "content": "# D3PD\r\n\r\nThe official implementation of the paper [D3PD: Dual Distillation and Dynamic Fusion of Camera and Radar for 3D Perception Detection]\r\n\r\n## Installation\r\nPlease check [installation](docs/installation.md) for installation and [data_preparation](docs/data_preparation.md) for preparing the nuScenes dataset.\r\n\r\n## Getting Started\r\nPlease check [getting_started](docs/getting_started.md) for training, evaluation, and visualization of D3PD.\r\n\r\n\r\n## Acknowledgement\r\nThis project is mainly based on the following open-sourced projects: [open-mmlab](https://github.com/open-mmlab), [BEVDet](https://github.com/HuangJunJie2017/BEVDet).\r\n"
+        }
+    ]
+}

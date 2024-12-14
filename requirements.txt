@@ -1,0 +1,14 @@
+setuptools>=59.5.0,<60.2.0
+scikit-image==0.18.3
+lyft_dataset_sdk
+networkx>=2.2,<2.3
+numba==0.48.0
+numpy<1.20.0
+nuscenes-devkit
+plyfile==0.9
+tensorboard
+trimesh>=2.35.39,<2.35.40
+torchmetrics==0.11.4
+fvcore
+shapely==1.8.5.post1
+av2
