@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 -r requirements/build.txt
 -r requirements/optional.txt
 -r requirements/runtime.txt
 -r requirements/tests.txt
+=======
+>>>>>>> ba38bb592efd76d1c4f0f3d55f760297377ec0a5
 setuptools>=59.5.0,<60.2.0
 scikit-image==0.18.3
 lyft_dataset_sdk
