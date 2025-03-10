@@ -1,0 +1,10 @@
+{
+    "exclude": [
+        "data",
+        "work_dirs",
+        "d3pd",
+        "out",
+        "ckpts",
+        "mmdet3d/models/necks/c*"
+    ]
+}

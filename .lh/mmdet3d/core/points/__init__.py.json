@@ -1,0 +1,18 @@
+{
+    "sourceFile": "mmdet3d/core/points/__init__.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1716018787111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1716018787111,
+            "name": "Commit-0",
+            "content": "# Copyright (c) OpenMMLab. All rights reserved.\nfrom .base_points import BasePoints\nfrom .cam_points import CameraPoints\nfrom .depth_points import DepthPoints\nfrom .lidar_points import LiDARPoints\nfrom .radar_points import RadarPoints\n\n__all__ = [\"BasePoints\", \"CameraPoints\", \"DepthPoints\", \"LiDARPoints\"]\n\n\ndef get_points_type(points_type):\n    \"\"\"Get the class of points according to coordinate type.\n\n    Args:\n        points_type (str): The type of points coordinate.\n            The valid value are \"CAMERA\", \"LIDAR\", or \"DEPTH\".\n\n    Returns:\n        class: Points type.\n    \"\"\"\n    if points_type == \"CAMERA\":\n        points_cls = CameraPoints\n    elif points_type == \"LIDAR\":\n        points_cls = LiDARPoints\n    elif points_type == \"DEPTH\":\n        points_cls = DepthPoints\n    else:\n        raise ValueError(\n            'Only \"points_type\" of \"CAMERA\", \"LIDAR\", or \"DEPTH\"'\n            f\" are supported, got {points_type}\"\n        )\n\n    return points_cls\n"
+        }
+    ]
+}

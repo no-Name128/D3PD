@@ -1,0 +1,22 @@
+{
+    "sourceFile": "mmdet3d/version.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716005775522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716005857602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,20 @@\n # Copyright (c) Open-MMLab. All rights reserved.\n \n # __version__ = '1.0.0rc4'\n-__version__ = '0.17.2'\n+__version__ = \"0.17.2\"\n short_version = __version__\n \n \n def parse_version_info(version_str):\n     version_info = []\n-    for x in version_str.split('.'):\n+    for x in version_str.split(\".\"):\n         if x.isdigit():\n             version_info.append(int(x))\n-        elif x.find('rc') != -1:\n-            patch_version = x.split('rc')\n+        elif x.find(\"rc\") != -1:\n+            patch_version = x.split(\"rc\")\n             version_info.append(int(patch_version[0]))\n-            version_info.append(f'rc{patch_version[1]}')\n+            version_info.append(f\"rc{patch_version[1]}\")\n     return tuple(version_info)\n \n \n version_info = parse_version_info(__version__)\n"
+                }
+            ],
+            "date": 1716005775522,
+            "name": "Commit-0",
+            "content": "# Copyright (c) Open-MMLab. All rights reserved.\n\n# __version__ = '1.0.0rc4'\n__version__ = '0.17.2'\nshort_version = __version__\n\n\ndef parse_version_info(version_str):\n    version_info = []\n    for x in version_str.split('.'):\n        if x.isdigit():\n            version_info.append(int(x))\n        elif x.find('rc') != -1:\n            patch_version = x.split('rc')\n            version_info.append(int(patch_version[0]))\n            version_info.append(f'rc{patch_version[1]}')\n    return tuple(version_info)\n\n\nversion_info = parse_version_info(__version__)\n"
+        }
+    ]
+}

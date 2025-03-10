@@ -1,0 +1,94 @@
+{
+    "sourceFile": "mmdet3d/models/utils/self_print.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1716022520414,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716529042097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,8 +61,10 @@\n #         )\n \n \n def feats_to_img(feats, base_path, suffix=\"out\", **kwargs):\n+    if feat is None:\n+        return\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n \n     base_path = os.path.join(base_path, suffix)\n"
+                },
+                {
+                    "date": 1740707755259,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,10 +60,10 @@\n #             heatmapshow,\n #         )\n \n \n-def feats_to_img(feats, base_path, suffix=\"out\", **kwargs):\n-    if feat is None:\n+def feats_to_img(feats, base_path, suffix=\"out\", indice=0, **kwargs):\n+    if feats is None:\n         return\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n \n@@ -77,8 +77,16 @@\n     bs, c, h, w = feats.shape\n     assert bs >= 1\n     feats = feats[0].detach().cpu().numpy()\n \n+    if indice == 0:\n+        # print()\n+        plt.imsave(\n+            f\"{base_path}/gray_scale_tensor{indice}.png\",\n+            feat[0, ...],\n+            cmap=\"gray\",\n+        )\n+\n     for idx, feat in enumerate(feats):\n \n         # print()\n         plt.imsave(\n"
+                },
+                {
+                    "date": 1740707997053,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n     if indice == 0:\n         # print()\n         plt.imsave(\n             f\"{base_path}/gray_scale_tensor{indice}.png\",\n-            feat[0, ...],\n+            feats[0, ...],\n             cmap=\"gray\",\n         )\n \n     for idx, feat in enumerate(feats):\n"
+                },
+                {
+                    "date": 1740708444970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n #             heatmapshow,\n #         )\n \n \n-def feats_to_img(feats, base_path, suffix=\"out\", indice=0, **kwargs):\n+def feats_to_img(feats, base_path, suffix=\"out\", indice=0,sample_idx=None, **kwargs):\n     if feats is None:\n         return\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n"
+                },
+                {
+                    "date": 1740708445575,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n #             heatmapshow,\n #         )\n \n \n-def feats_to_img(feats, base_path, suffix=\"out\", indice=0,sample_idx=None, **kwargs):\n+def feats_to_img(feats, base_path, suffix=\"out\", indice=0, sample_idx=None, **kwargs):\n     if feats is None:\n         return\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n"
+                },
+                {
+                    "date": 1740708481595,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,13 +79,20 @@\n     feats = feats[0].detach().cpu().numpy()\n \n     if indice == 0:\n         # print()\n-        plt.imsave(\n-            f\"{base_path}/gray_scale_tensor{indice}.png\",\n+        if sample_idx is not None:\n+            plt.imsave(\n+            f\"{base_path}/{sample_idx}.png\",\n             feats[0, ...],\n             cmap=\"gray\",\n         )\n+        else:\n+            plt.imsave(\n+                f\"{base_path}/gray_scale_tensor{indice}.png\",\n+                feats[0, ...],\n+                cmap=\"gray\",\n+            )\n \n     for idx, feat in enumerate(feats):\n \n         # print()\n"
+                },
+                {
+                    "date": 1740708482529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,12 +81,12 @@\n     if indice == 0:\n         # print()\n         if sample_idx is not None:\n             plt.imsave(\n-            f\"{base_path}/{sample_idx}.png\",\n-            feats[0, ...],\n-            cmap=\"gray\",\n-        )\n+                f\"{base_path}/{sample_idx}.png\",\n+                feats[0, ...],\n+                cmap=\"gray\",\n+            )\n         else:\n             plt.imsave(\n                 f\"{base_path}/gray_scale_tensor{indice}.png\",\n                 feats[0, ...],\n"
+                },
+                {
+                    "date": 1740708497012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n     if indice == 0:\n         # print()\n         if sample_idx is not None:\n             plt.imsave(\n-                f\"{base_path}/{sample_idx}.png\",\n+                f\"{base_path}/vis/{sample_idx}.png\",\n                 feats[0, ...],\n                 cmap=\"gray\",\n             )\n         else:\n"
+                },
+                {
+                    "date": 1740708503753,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -81,9 +81,9 @@\n     if indice == 0:\n         # print()\n         if sample_idx is not None:\n             plt.imsave(\n-                f\"{base_path}/vis/{sample_idx}.png\",\n+                f\"{base_path}/{sample_idx}.png\",\n                 feats[0, ...],\n                 cmap=\"gray\",\n             )\n         else:\n"
+                },
+                {
+                    "date": 1740708669999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n #             heatmapshow,\n #         )\n \n \n-def feats_to_img(feats, base_path, suffix=\"out\", indice=0, sample_idx=None, **kwargs):\n+def feats_to_img(feats, base_path, suffix=\"out\", indice=-1, sample_idx=None, **kwargs):\n     if feats is None:\n         return\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n"
+                },
+                {
+                    "date": 1740709023839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -91,19 +91,21 @@\n                 f\"{base_path}/gray_scale_tensor{indice}.png\",\n                 feats[0, ...],\n                 cmap=\"gray\",\n             )\n+    else:\n+        for idx, feat in enumerate(feats):\n \n-    for idx, feat in enumerate(feats):\n+            # print()\n+            plt.imsave(\n+                f\"{base_path}/gray_scale_tensor{idx}.png\",\n+                feat,\n+                cmap=\"gray\",\n+            )\n \n-        # print()\n-        plt.imsave(\n-            f\"{base_path}/gray_scale_tensor{idx}.png\",\n-            feat,\n-            cmap=\"gray\",\n-        )\n \n \n+\n def feats_to_img_boxes(feats, base_path, suffix=\"out\", **kwargs):\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n \n"
+                },
+                {
+                    "date": 1740709025052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -102,10 +102,8 @@\n                 cmap=\"gray\",\n             )\n \n \n-\n-\n def feats_to_img_boxes(feats, base_path, suffix=\"out\", **kwargs):\n     feats = feats[0] if isinstance(feats, list) else feats\n     import os\n \n"
+                },
+                {
+                    "date": 1740709045245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -64,9 +64,8 @@\n def feats_to_img(feats, base_path, suffix=\"out\", indice=-1, sample_idx=None, **kwargs):\n     if feats is None:\n         return\n     feats = feats[0] if isinstance(feats, list) else feats\n-    import os\n \n     base_path = os.path.join(base_path, suffix)\n     if os.path.exists(base_path):\n         pass\n"
+                },
+                {
+                    "date": 1740730960872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -130,4 +130,31 @@\n             f\"{base_path}/gray_scale_tensor{idx}.png\",\n             feat,\n             cmap=\"gray\",\n         )\n+\n+\n+def save_feature_to_img_cam(features, idx, visual_path):\n+    visual_path = visual_path.split(\"LIDAR_TOP/\")[1].split(\".pcd.bin\")[0]\n+    # features=self.get_single_feature() # 返回一个指定层输出的特征图,属于四维张量[batch,channel,width,height]\n+    for i in range(features.shape[1]):\n+        print(\"----------\", features.shape)\n+        feature = features[:, i, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n+        feature = feature.view(feature.shape[1], feature.shape[2]) # batch为1，所以可以直接view成二维张量\n+\n+        feature = feature.cpu().data.numpy() # 转为numpy\n+\n+        # 根据图像的像素值中最大最小值，将特征图的像素值归一化到了[0,1];\n+        # img = cv2.resize(img, (256, 256))\n+        print(\"type: \", type(feature))\n+        print(\"shape: \", feature.shape)\n+        #feature = cv2.resize(feature, (256, 256))\n+        feature = (feature - np.amin(feature))/(np.amax(feature) - np.amin(feature) + 1e-5) # 注意要防止分母为0！\n+        feature = np.uint8(255 * feature)#np.round(feature * 255) # [0, 1]——[0, 255],为cv2.imwrite()函数而进行\n+        feature = cv2.resize(feature, (256, 256))\n+        heatmap = cv2.applyColorMap(feature, cv2.COLORMAP_JET)\n+        path = os.path.join(\"outfeature/Cam/\", visual_path)#   visaul_path+idx\n+        mkdir(path)  # 创建保存文件夹，以选定可视化层的序号命名\n+        print(path)\n+        superimposed_img = heatmap * 0.4 #+ img\n+        cv2.imwrite(path +'/' +str(i) + '.jpg',superimposed_img)  # 保存当前层输出的每个channel上的特征图为一张图像\n+        #cv2.imwrite(path  + str(i) + '.jpg', superimposed_img)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1740730978351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -133,9 +133,9 @@\n         )\n \n \n def save_feature_to_img_cam(features, idx, visual_path):\n-    visual_path = visual_path.split(\"LIDAR_TOP/\")[1].split(\".pcd.bin\")[0]\n+    # visual_path = visual_path.split(\"LIDAR_TOP/\")[1].split(\".pcd.bin\")[0]\n     # features=self.get_single_feature() # 返回一个指定层输出的特征图,属于四维张量[batch,channel,width,height]\n     for i in range(features.shape[1]):\n         print(\"----------\", features.shape)\n         feature = features[:, i, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n"
+                },
+                {
+                    "date": 1740731024824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -135,8 +135,31 @@\n \n def save_feature_to_img_cam(features, idx, visual_path):\n     # visual_path = visual_path.split(\"LIDAR_TOP/\")[1].split(\".pcd.bin\")[0]\n     # features=self.get_single_feature() # 返回一个指定层输出的特征图,属于四维张量[batch,channel,width,height]\n+    \n+    if idx==0:\n+        print(\"----------\", features.shape)\n+        feature = features[:, i, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n+        feature = feature.view(feature.shape[1], feature.shape[2]) # batch为1，所以可以直接view成二维张量\n+\n+        feature = feature.cpu().data.numpy() # 转为numpy\n+\n+        # 根据图像的像素值中最大最小值，将特征图的像素值归一化到了[0,1];\n+        # img = cv2.resize(img, (256, 256))\n+        print(\"type: \", type(feature))\n+        print(\"shape: \", feature.shape)\n+        #feature = cv2.resize(feature, (256, 256))\n+        feature = (feature - np.amin(feature))/(np.amax(feature) - np.amin(feature) + 1e-5) # 注意要防止分母为0！\n+        feature = np.uint8(255 * feature)#np.round(feature * 255) # [0, 1]——[0, 255],为cv2.imwrite()函数而进行\n+        feature = cv2.resize(feature, (256, 256))\n+        heatmap = cv2.applyColorMap(feature, cv2.COLORMAP_JET)\n+        path = os.path.join(\"outfeature/Cam/\", visual_path)#   visaul_path+idx\n+        mkdir(path)  # 创建保存文件夹，以选定可视化层的序号命名\n+        print(path)\n+        superimposed_img = heatmap * 0.4 #+ img\n+        cv2.imwrite(path +'/' +str(i) + '.jpg',superimposed_img)  # 保存当前层输出的每个channel上的特征图为一张图像\n+        #cv2.imwrite(path  + str(i) + '.jpg', superimposed_img)\n     for i in range(features.shape[1]):\n         print(\"----------\", features.shape)\n         feature = features[:, i, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n         feature = feature.view(feature.shape[1], feature.shape[2]) # batch为1，所以可以直接view成二维张量\n"
+                },
+                {
+                    "date": 1740731046950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n     # features=self.get_single_feature() # 返回一个指定层输出的特征图,属于四维张量[batch,channel,width,height]\n     \n     if idx==0:\n         print(\"----------\", features.shape)\n-        feature = features[:, i, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n+        feature = features[0, idx, :, :] # 在channel维度上，每个channel代表了一个卷积核的输出特征图，所以对每个channel的图像分别进行处理和保存\n         feature = feature.view(feature.shape[1], feature.shape[2]) # batch为1，所以可以直接view成二维张量\n \n         feature = feature.cpu().data.numpy() # 转为numpy\n \n"
+                },
+                {
+                    "date": 1740731101539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n #             f\"{base_path}/gray_scale_tensor{idx}.png\",\n #             heatmapshow,\n #         )\n def mkdir_by_path(path):\n-        if os.path.exists(base_path):\n+    if os.path.exists(base_path):\n         pass\n     else:\n         # os.mkdir(base_path)\n         os.makedirs(base_path)\n"
+                },
+                {
+                    "date": 1740731131077,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -196,9 +196,9 @@\n         )  # np.round(feature * 255) # [0, 1]——[0, 255],为cv2.imwrite()函数而进行\n         feature = cv2.resize(feature, (256, 256))\n         heatmap = cv2.applyColorMap(feature, cv2.COLORMAP_JET)\n         path = os.path.join(\"outfeature/Cam/\", visual_path)  #   visaul_path+idx\n-        mkdir_by_path(base_path=path)# 创建保存文件夹，以选定可视化层的序号命名\n+        mkdir_by_path(base_path=path)  # 创建保存文件夹，以选定可视化层的序号命名\n         print(path)\n         superimposed_img = heatmap * 0.4  # + img\n         cv2.imwrite(\n             path + \"/\" + str(i) + \".jpg\", superimposed_img\n"
+                }
+            ],
+            "date": 1716022520414,
+            "name": "Commit-0",
+            "content": "from matplotlib import pyplot as plt\nimport cv2\nimport os\nimport torch\nimport numpy as np\n\n\ndef print2file(content, suffix=\"\", end=\".json\", mode=\"w\"):\n    f = open(\"/mnt/data/exps_logs/out_\" + suffix + end, mode=mode)\n    print(content, file=f)\n\n\n# def feats_to_img(feats, base_path, suffix=\"out\", **kwargs):\n\n#     base_path = os.path.join(base_path, suffix)\n\n#     base_path = os.path.join(base_path, suffix)\n#     if os.path.exists(base_path):\n#         pass\n#     else:\n#         # os.mkdir(base_path)\n#         os.makedirs(base_path)\n\n#     bs, c, h, w = feats.shape\n#     assert bs >= 1\n#     # feats = feats[0].detach().cpu().numpy()\n#     feats = feats[0]\n#     if \"boxes\" in kwargs.keys():\n#         gt_boxes = kwargs[\"boxes\"]\n\n\n#     for idx, feat in enumerate(feats):\n\n#         heatmapshow = None\n#         # heatmapshow = cv2.normalize(\n#         #     feats,\n#         #     heatmapshow,\n#         #     alpha=0,\n#         #     beta=255,\n#         #     norm_type=cv2.NORM_MINMAX,\n#         #     dtype=cv2.CV_8U,\n#         # )\n\n#         heatmapshow = (\n#             feats.mul(255)\n#             .add_(0.5)\n#             .clamp_(0, 255)\n#             .permute(1, 2, 0)\n#             .to(\"cpu\", torch.uint8)\n#             .numpy()\n#         )\n#         heatmapshow = heatmapshow.astype(np.uint8)\n#         heatmapshow = cv2.applyColorMap(heatmapshow, cv2.COLORMAP_JET)\n\n#         for box in gt_boxes:\n#             cv2.circle(heatmapshow, box[:2] / 8, 3, \"black\", 0)\n\n#         cv2.imwrite(\n#             f\"{base_path}/gray_scale_tensor{idx}.png\",\n#             heatmapshow,\n#         )\n\n\ndef feats_to_img(feats, base_path, suffix=\"out\", **kwargs):\n    feats = feats[0] if isinstance(feats, list) else feats\n    import os\n\n    base_path = os.path.join(base_path, suffix)\n    if os.path.exists(base_path):\n        pass\n    else:\n        # os.mkdir(base_path)\n        os.makedirs(base_path)\n\n    bs, c, h, w = feats.shape\n    assert bs >= 1\n    feats = feats[0].detach().cpu().numpy()\n\n    for idx, feat in enumerate(feats):\n\n        # print()\n        plt.imsave(\n            f\"{base_path}/gray_scale_tensor{idx}.png\",\n            feat,\n            cmap=\"gray\",\n        )\n\n\ndef feats_to_img_boxes(feats, base_path, suffix=\"out\", **kwargs):\n    feats = feats[0] if isinstance(feats, list) else feats\n    import os\n\n    boxes = kwargs[\"boxes\"]\n    points = [(box[0] / 8, box[1] / 8) for box in boxes]\n\n    base_path = os.path.join(base_path, suffix)\n    if os.path.exists(base_path):\n        pass\n    else:\n        # os.mkdir(base_path)\n        os.makedirs(base_path)\n\n    bs, c, h, w = feats.shape\n    assert bs >= 1\n    feats = feats[0].detach().cpu().numpy()\n\n    for idx, feat in enumerate(feats):\n\n        for point in points:\n            plt.plot(point[0], point[1], \"bo\")  # 'bo'表示蓝色圆点\n\n        # print()\n        plt.imsave(\n            f\"{base_path}/gray_scale_tensor{idx}.png\",\n            feat,\n            cmap=\"gray\",\n        )\n"
+        }
+    ]
+}

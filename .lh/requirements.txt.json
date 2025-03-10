@@ -1,0 +1,18 @@
+{
+    "sourceFile": "requirements.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1741595737257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1741595737257,
+            "name": "Commit-0",
+            "content": "-r requirements/build.txt\n-r requirements/optional.txt\n-r requirements/runtime.txt\n-r requirements/tests.txt\nsetuptools>=59.5.0,<60.2.0\nscikit-image==0.18.3\nlyft_dataset_sdk\nnetworkx>=2.2,<2.3\nnumba==0.48.0\nnumpy<1.20.0\nnuscenes-devkit\nplyfile==0.9\ntensorboard\ntrimesh>=2.35.39,<2.35.40\ntorchmetrics==0.11.4\nfvcore\nshapely==1.8.5.post1\nav2"
+        }
+    ]
+}

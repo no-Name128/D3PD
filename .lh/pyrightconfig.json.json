@@ -1,0 +1,22 @@
+{
+    "sourceFile": "pyrightconfig.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1717333652550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1717333813531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n         \"work_dirs\",\n         \"d3pd\",\n         \"out\",\n         \"ckpts\",\n-        \"mmdet3d/models/necks/cbam.py\"\n+        \"mmdet3d/models/necks/c*\"\n     ]\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1717333652550,
+            "name": "Commit-0",
+            "content": "{\n    \"exclude\": [\n        \"data\",\n        \"work_dirs\",\n        \"d3pd\",\n        \"out\",\n        \"ckpts\",\n        \"mmdet3d/models/necks/cbam.py\"\n    ]\n}"
+        }
+    ]
+}

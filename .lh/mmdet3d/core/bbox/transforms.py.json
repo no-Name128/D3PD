@@ -1,0 +1,18 @@
+{
+    "sourceFile": "mmdet3d/core/bbox/transforms.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1740707918237,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1740707918237,
+            "name": "Commit-0",
+            "content": "# Copyright (c) OpenMMLab. All rights reserved.\nimport torch\n\n\ndef bbox3d_mapping_back(bboxes, scale_factor, flip_horizontal, flip_vertical):\n    \"\"\"Map bboxes from testing scale to original image scale.\n\n    Args:\n        bboxes (:obj:`BaseInstance3DBoxes`): Boxes to be mapped back.\n        scale_factor (float): Scale factor.\n        flip_horizontal (bool): Whether to flip horizontally.\n        flip_vertical (bool): Whether to flip vertically.\n\n    Returns:\n        :obj:`BaseInstance3DBoxes`: Boxes mapped back.\n    \"\"\"\n    new_bboxes = bboxes.clone()\n    if flip_horizontal:\n        new_bboxes.flip('horizontal')\n    if flip_vertical:\n        new_bboxes.flip('vertical')\n    new_bboxes.scale(1 / scale_factor)\n\n    return new_bboxes\n\n\ndef bbox3d2roi(bbox_list):\n    \"\"\"Convert a list of bounding boxes to roi format.\n\n    Args:\n        bbox_list (list[torch.Tensor]): A list of bounding boxes\n            corresponding to a batch of images.\n\n    Returns:\n        torch.Tensor: Region of interests in shape (n, c), where\n            the channels are in order of [batch_ind, x, y ...].\n    \"\"\"\n    rois_list = []\n    for img_id, bboxes in enumerate(bbox_list):\n        if bboxes.size(0) > 0:\n            img_inds = bboxes.new_full((bboxes.size(0), 1), img_id)\n            rois = torch.cat([img_inds, bboxes], dim=-1)\n        else:\n            rois = torch.zeros_like(bboxes)\n        rois_list.append(rois)\n    rois = torch.cat(rois_list, 0)\n    return rois\n\n\ndef bbox3d2result(bboxes, scores, labels, attrs=None):\n    \"\"\"Convert detection results to a list of numpy arrays.\n\n    Args:\n        bboxes (torch.Tensor): Bounding boxes with shape (N, 5).\n        labels (torch.Tensor): Labels with shape (N, ).\n        scores (torch.Tensor): Scores with shape (N, ).\n        attrs (torch.Tensor, optional): Attributes with shape (N, ).\n            Defaults to None.\n\n    Returns:\n        dict[str, torch.Tensor]: Bounding box results in cpu mode.\n\n            - boxes_3d (torch.Tensor): 3D boxes.\n            - scores (torch.Tensor): Prediction scores.\n            - labels_3d (torch.Tensor): Box labels.\n            - attrs_3d (torch.Tensor, optional): Box attributes.\n    \"\"\"\n    result_dict = dict(\n        boxes_3d=bboxes.to('cpu'),\n        scores_3d=scores.cpu(),\n        labels_3d=labels.cpu())\n\n    if attrs is not None:\n        result_dict['attrs_3d'] = attrs.cpu()\n\n    return result_dict\n"
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".gitignore",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1741595629267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1741595663321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -129,5 +129,7 @@\n out\n \n lh\n \n-hybirdbev-review\n\\ No newline at end of file\n+hybirdbev-review\n+\n+configs\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1741596085953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -131,5 +131,11 @@\n lh\n \n hybirdbev-review\n \n-configs\n\\ No newline at end of file\n+configs\n+\n+out-vis\n+\n+docker\n+\n+demo\n"
+                }
+            ],
+            "date": 1741595629267,
+            "name": "Commit-0",
+            "content": "# Byte-compiled / optimized / DLL files\n__pycache__/\n*.py[cod]\n*$py.class\n\n# C extensions\n*.so\n\n# Distribution / packaging\n.Python\nbuild/\ndevelop-eggs/\ndist/\ndownloads/\neggs/\n.eggs/\nlib/\nlib64/\nparts/\nsdist/\nvar/\nwheels/\n*.egg-info/\n.installed.cfg\n*.egg\nMANIFEST\n\n# PyInstaller\n#  Usually these files are written by a python script from a template\n#  before PyInstaller builds the exe, so as to inject date/other infos into it.\n*.manifest\n*.spec\n\n# Installer logs\npip-log.txt\npip-delete-this-directory.txt\n\n# Unit test / coverage reports\nhtmlcov/\n.tox/\n.coverage\n.coverage.*\n.cache\nnosetests.xml\ncoverage.xml\n*.cover\n.hypothesis/\n.pytest_cache/\n\n# Translations\n*.mo\n*.pot\n\n# Django stuff:\n*.log\nlocal_settings.py\ndb.sqlite3\n\n# Flask stuff:\ninstance/\n.webassets-cache\n\n# Scrapy stuff:\n.scrapy\n\n# Sphinx documentation\ndocs/_build/\n\n# PyBuilder\ntarget/\n\n# Jupyter Notebook\n.ipynb_checkpoints\n\n# pyenv\n.python-version\n\n# celery beat schedule file\ncelerybeat-schedule\n\n# SageMath parsed files\n*.sage.py\n\n# Environments\n.env\n.venv\nenv/\nvenv/\nENV/\nenv.bak/\nvenv.bak/\n\n# Spyder project settings\n.spyderproject\n.spyproject\n\n# Rope project settings\n.ropeproject\n\n# mkdocs documentation\n/site\n\n# mypy\n.mypy_cache/\n\n# mmdet/version.py\ndata\n.vscode\n.idea\n\n# custom\n*.pkl\n*.pkl.json\n*.log.json\nwork_dirs/\n\n# Pytorch\n*.pth\n\n# Customize excluded folders and directories\ndenseradar\n\nd3pd\n\nckpts\n\nvis\n\nout\n\nlh\n\nhybirdbev-review"
+        }
+    ]
+}

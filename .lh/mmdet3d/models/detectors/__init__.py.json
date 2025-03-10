@@ -1,0 +1,22 @@
+{
+    "sourceFile": "mmdet3d/models/detectors/__init__.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716003133012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716470329451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,9 @@\n from .votenet import VoteNet\n from .voxelnet import VoxelNet\n \n from .d3pd_v3 import *\n+from .d3pd import D3PD\n \n __all__ = [\n     \"Base3DDetector\",\n     \"VoxelNet\",\n"
+                }
+            ],
+            "date": 1716003133012,
+            "name": "Commit-0",
+            "content": "# Copyright (c) OpenMMLab. All rights reserved.\nfrom .base import Base3DDetector\nfrom .bevdet import BEVDepth4D, BEVDet, BEVDet4D, BEVDetTRT, BEVStereo4D\nfrom .bevdet_occ import BEVStereo4DOCC\nfrom .centerpoint import CenterPoint\nfrom .dal import DAL\nfrom .dynamic_voxelnet import DynamicVoxelNet\nfrom .fcos_mono3d import FCOSMono3D\nfrom .groupfree3dnet import GroupFree3DNet\nfrom .h3dnet import H3DNet\nfrom .imvotenet import ImVoteNet\nfrom .imvoxelnet import ImVoxelNet\nfrom .mink_single_stage import MinkSingleStage3DDetector\nfrom .mvx_faster_rcnn import DynamicMVXFasterRCNN, MVXFasterRCNN\nfrom .mvx_two_stage import MVXTwoStageDetector\nfrom .parta2 import PartA2\nfrom .point_rcnn import PointRCNN\nfrom .sassd import SASSD\nfrom .single_stage_mono3d import SingleStageMono3DDetector\nfrom .smoke_mono3d import SMOKEMono3D\nfrom .ssd3dnet import SSD3DNet\nfrom .votenet import VoteNet\nfrom .voxelnet import VoxelNet\n\nfrom .d3pd_v3 import *\n\n__all__ = [\n    \"Base3DDetector\",\n    \"VoxelNet\",\n    \"DynamicVoxelNet\",\n    \"MVXTwoStageDetector\",\n    \"DynamicMVXFasterRCNN\",\n    \"MVXFasterRCNN\",\n    \"PartA2\",\n    \"VoteNet\",\n    \"H3DNet\",\n    \"CenterPoint\",\n    \"SSD3DNet\",\n    \"ImVoteNet\",\n    \"SingleStageMono3DDetector\",\n    \"FCOSMono3D\",\n    \"ImVoxelNet\",\n    \"GroupFree3DNet\",\n    \"PointRCNN\",\n    \"SMOKEMono3D\",\n    \"MinkSingleStage3DDetector\",\n    \"SASSD\",\n    \"BEVDet\",\n    \"BEVDet4D\",\n    \"BEVDepth4D\",\n    \"BEVDetTRT\",\n    \"BEVStereo4D\",\n    \"BEVStereo4DOCC\",\n]\n"
+        }
+    ]
+}

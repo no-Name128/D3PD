@@ -1,0 +1,30 @@
+{
+    "sourceFile": "mmdet3d/models/backbones/__init__.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1716024569122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716024569990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,21 @@\n from .swin import SwinTransformer\n from .swin_bev import SwinTransformerBEVFT\n \n __all__ = [\n-    'ResNet', 'ResNetV1d', 'ResNeXt', 'SSDVGG', 'HRNet', 'NoStemRegNet',\n-    'SECOND', 'DGCNNBackbone', 'PointNet2SASSG', 'PointNet2SAMSG',\n-    'MultiBackbone', 'DLANet', 'MinkResNet', 'CustomResNet', 'CustomResNet3D',\n-    'SwinTransformer'\n+    \"ResNet\",\n+    \"ResNetV1d\",\n+    \"ResNeXt\",\n+    \"SSDVGG\",\n+    \"HRNet\",\n+    \"NoStemRegNet\",\n+    \"SECOND\",\n+    \"DGCNNBackbone\",\n+    \"PointNet2SASSG\",\n+    \"PointNet2SAMSG\",\n+    \"MultiBackbone\",\n+    \"DLANet\",\n+    \"MinkResNet\",\n+    \"CustomResNet\",\n+    \"CustomResNet3D\",\n+    \"SwinTransformer\",\n ]\n"
+                },
+                {
+                    "date": 1716024596731,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,9 @@\n from .resnet import CustomResNet, CustomResNet3D\n from .second import SECOND\n from .swin import SwinTransformer\n from .swin_bev import SwinTransformerBEVFT\n+from .vovnet import VoVNetCP\n \n __all__ = [\n     \"ResNet\",\n     \"ResNetV1d\",\n@@ -28,5 +29,6 @@\n     \"MinkResNet\",\n     \"CustomResNet\",\n     \"CustomResNet3D\",\n     \"SwinTransformer\",\n+    \"SwinTransformerBEVFT\",\n ]\n"
+                },
+                {
+                    "date": 1716025245007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n from .resnet import CustomResNet, CustomResNet3D\n from .second import SECOND\n from .swin import SwinTransformer\n from .swin_bev import SwinTransformerBEVFT\n-from .vovnet import VoVNetCP\n+from .vovnet import VoVNet\n \n __all__ = [\n     \"ResNet\",\n     \"ResNetV1d\",\n@@ -30,5 +30,6 @@\n     \"CustomResNet\",\n     \"CustomResNet3D\",\n     \"SwinTransformer\",\n     \"SwinTransformerBEVFT\",\n+    \"VoVNet\",\n ]\n"
+                }
+            ],
+            "date": 1716024569122,
+            "name": "Commit-0",
+            "content": "# Copyright (c) OpenMMLab. All rights reserved.\nfrom mmdet.models.backbones import SSDVGG, HRNet, ResNet, ResNetV1d, ResNeXt\nfrom .dgcnn import DGCNNBackbone\nfrom .dla import DLANet\nfrom .mink_resnet import MinkResNet\nfrom .multi_backbone import MultiBackbone\nfrom .nostem_regnet import NoStemRegNet\nfrom .pointnet2_sa_msg import PointNet2SAMSG\nfrom .pointnet2_sa_ssg import PointNet2SASSG\nfrom .resnet import CustomResNet, CustomResNet3D\nfrom .second import SECOND\nfrom .swin import SwinTransformer\nfrom .swin_bev import SwinTransformerBEVFT\n\n__all__ = [\n    'ResNet', 'ResNetV1d', 'ResNeXt', 'SSDVGG', 'HRNet', 'NoStemRegNet',\n    'SECOND', 'DGCNNBackbone', 'PointNet2SASSG', 'PointNet2SAMSG',\n    'MultiBackbone', 'DLANet', 'MinkResNet', 'CustomResNet', 'CustomResNet3D',\n    'SwinTransformer'\n]\n"
+        }
+    ]
+}

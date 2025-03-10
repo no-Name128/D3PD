@@ -1,0 +1,26 @@
+{
+    "sourceFile": "mmdet3d/models/dense_heads/__init__.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1716017475735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716017483032,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n from .base_conv_bbox_head import BaseConvBboxHead\n from .base_mono3d_dense_head import BaseMono3DDenseHead\n from .centerpoint_head import CenterHead\n from .dal_head import DALHead\n+\n # from .fcaf3d_head import FCAF3DHead\n from .fcos_mono3d_head import FCOSMono3DHead\n from .free_anchor3d_head import FreeAnchor3DHead\n from .groupfree3d_head import GroupFree3DHead\n@@ -19,10 +20,21 @@\n from .transfusion_head import TransFusionHead\n from .vote_head import VoteHead\n \n __all__ = [\n-    'Anchor3DHead', 'FreeAnchor3DHead', 'PartA2RPNHead', 'VoteHead',\n-    'SSD3DHead', 'BaseConvBboxHead', 'CenterHead', 'ShapeAwareHead',\n-    'BaseMono3DDenseHead', 'AnchorFreeMono3DHead', 'FCOSMono3DHead',\n-    'GroupFree3DHead', 'PointRPNHead', 'SMOKEMono3DHead', 'PGDHead',\n-    'MonoFlexHead', 'FCAF3DHead'\n+    \"Anchor3DHead\",\n+    \"FreeAnchor3DHead\",\n+    \"PartA2RPNHead\",\n+    \"VoteHead\",\n+    \"SSD3DHead\",\n+    \"BaseConvBboxHead\",\n+    \"CenterHead\",\n+    \"ShapeAwareHead\",\n+    \"BaseMono3DDenseHead\",\n+    \"AnchorFreeMono3DHead\",\n+    \"FCOSMono3DHead\",\n+    \"GroupFree3DHead\",\n+    \"PointRPNHead\",\n+    \"SMOKEMono3DHead\",\n+    \"PGDHead\",\n+    \"MonoFlexHead\",\n ]\n"
+                },
+                {
+                    "date": 1716017530201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n from .pgd_head import PGDHead\n from .point_rpn_head import PointRPNHead\n from .shape_aware_head import ShapeAwareHead\n from .smoke_mono3d_head import SMOKEMono3DHead\n-from .ssd_3d_head import SSD3DHead\n+# from .ssd_3d_head import SSD3DHead\n from .transfusion_head import TransFusionHead\n from .vote_head import VoteHead\n \n __all__ = [\n"
+                }
+            ],
+            "date": 1716017475735,
+            "name": "Commit-0",
+            "content": "# Copyright (c) OpenMMLab. All rights reserved.\nfrom .anchor3d_head import Anchor3DHead\nfrom .anchor_free_mono3d_head import AnchorFreeMono3DHead\nfrom .base_conv_bbox_head import BaseConvBboxHead\nfrom .base_mono3d_dense_head import BaseMono3DDenseHead\nfrom .centerpoint_head import CenterHead\nfrom .dal_head import DALHead\n# from .fcaf3d_head import FCAF3DHead\nfrom .fcos_mono3d_head import FCOSMono3DHead\nfrom .free_anchor3d_head import FreeAnchor3DHead\nfrom .groupfree3d_head import GroupFree3DHead\nfrom .monoflex_head import MonoFlexHead\nfrom .parta2_rpn_head import PartA2RPNHead\nfrom .pgd_head import PGDHead\nfrom .point_rpn_head import PointRPNHead\nfrom .shape_aware_head import ShapeAwareHead\nfrom .smoke_mono3d_head import SMOKEMono3DHead\nfrom .ssd_3d_head import SSD3DHead\nfrom .transfusion_head import TransFusionHead\nfrom .vote_head import VoteHead\n\n__all__ = [\n    'Anchor3DHead', 'FreeAnchor3DHead', 'PartA2RPNHead', 'VoteHead',\n    'SSD3DHead', 'BaseConvBboxHead', 'CenterHead', 'ShapeAwareHead',\n    'BaseMono3DDenseHead', 'AnchorFreeMono3DHead', 'FCOSMono3DHead',\n    'GroupFree3DHead', 'PointRPNHead', 'SMOKEMono3DHead', 'PGDHead',\n    'MonoFlexHead', 'FCAF3DHead'\n]\n"
+        }
+    ]
+}
